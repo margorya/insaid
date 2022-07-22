@@ -70,3 +70,5 @@
    curl -d "{\"name\":\"Vera\",\"message\":\"Hi! I'm Vera!\"}" -H "Content-Type: application/json" -H "Authorization:Bearer_token" -X POST http://localhost:8090/message
 3. Запрос истории сообщений:
    curl -d "{\"name\":\"Vera\",\"message\":\"history 2\"}" -H "Content-Type: application/json" -H "Authorization:Bearer_token" -X POST http://localhost:8090/message
+### Docker
+Для запуска и заливки данных в bd приложен файл docker-compose.yml в корне проекта.
