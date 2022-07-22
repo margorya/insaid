@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  db:
+    container_name: db
+    image: postgres:14.1
+    environment:
+      POSTGRES_DB: "insaiddb"
+      POSTGRES_USER: "pgadmin"
+      POSTGRES_PASSWORD: "123123Zz"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+      - .:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    hostname: postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U pgadmin -d insaiddb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  insaidrest:
+    container_name: insaid
+    build: insaid/
+    ports:
+      - "8090:8080"
+    hostname: insaidrest
+    depends_on:
+      - db
+    image: margorya/insaid:1.0
