@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://postgres:5432/insaiddb"
+    username: "pgadmin"
+    password: "123123Zz"
+  liquibase:
+    change-log: classpath:migration/changelog.xml
+    enabled: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        default_schema: insaid

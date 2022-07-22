@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="tsymbalist" id="05-load_data-passwd">
+        <sql>
+            INSERT INTO insaid.user_password(id, id_user_name, passwd) VALUES (0, 0, 'nick123');
+            INSERT INTO insaid.user_password(id, id_user_name, passwd) VALUES (1, 2, '123');
+            INSERT INTO insaid.user_password(id, id_user_name, passwd) VALUES (2, 1, 'pass');
+        </sql>
+        <rollback>
+            REVOKE ALL PRIVILEGES ON insaid.user_password FROM INSAID;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

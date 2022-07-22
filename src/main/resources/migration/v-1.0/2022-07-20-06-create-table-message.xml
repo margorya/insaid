@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="tsymbalist" id="07-create-table-message">
+        <sql>
+            CREATE TABLE IF NOT EXISTS insaid.message (
+            id INT NOT NULL,
+            id_user_name INT,
+            message VARCHAR(255) NOT NULL,
+            date_time timestamp without time zone NOT NULL,
+            PRIMARY KEY(id),
+            CONSTRAINT fk_user_name
+            FOREIGN KEY(id_user_name)
+            REFERENCES insaid.user_name(id)
+            );
+        </sql>
+        <rollback>
+            DROP TABLE IF EXISTS insaid.message CASCADE;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

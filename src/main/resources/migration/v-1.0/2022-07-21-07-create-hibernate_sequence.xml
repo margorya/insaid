@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="tsymbalist" id="09-create-hibernate_sequence">
+        <sql>
+            CREATE SEQUENCE insaid.hibernate_sequence;
+<!--            ALTER SEQUENCE insaid.hibernate_sequence-->
+<!--            OWNER TO pgadmin;-->
+        </sql>
+        <rollback>
+            DROP SEQUENCE IF EXISTS insaid.hibernate_sequence CASCADE;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

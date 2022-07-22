@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="tsymbalist" id="01-create-user">
+        <sql>
+            CREATE USER INSAID WITH PASSWORD '123INSAID';
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS INSAID;
+        </rollback>
+    </changeSet>
+    <changeSet author="tsymbalist" id="02-create-scheme">
+        <sql>
+            CREATE SCHEMA IF NOT EXISTS INSAID AUTHORIZATION insaid;
+        </sql>
+        <rollback>
+            DROP SCHEMA IF EXISTS INSAID CASCADE;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

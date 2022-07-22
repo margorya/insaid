@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <include file="2022-07-19-01-initial-schema.xml" relativeToChangelogFile="true"/>
+    <include file="2022-07-19-02-create-table-user_name.xml" relativeToChangelogFile="true"/>
+    <include file="2022-07-19-03-create-table-user_password.xml" relativeToChangelogFile="true"/>
+    <include file="2022-07-20-04-load_data-name.xml" relativeToChangelogFile="true"/>
+    <include file="2022-07-20-05-load_data-passwd.xml" relativeToChangelogFile="true"/>
+    <include file="2022-07-20-06-create-table-message.xml" relativeToChangelogFile="true"/>
+    <include file="2022-07-21-07-create-hibernate_sequence.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
