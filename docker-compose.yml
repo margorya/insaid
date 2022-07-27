@@ -21,7 +21,7 @@ services:
       retries: 5
   insaidrest:
     container_name: insaid
-    build: insaid/
+    build: ./
     ports:
       - "8090:8080"
     hostname: insaidrest
